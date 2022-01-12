@@ -12,20 +12,20 @@ const pokemon = new Pokemon(
   bulbasaur.types,
   bulbasaur.moves
 );
-const { id, name } = bulbasaur;
+const { id, nombre, foto, habilidades, tipos, movimientos } = pokemon;
 
 test('testea que se muestre correctamente la informacion del pokemon seleccionado', () => {
-  expect(pokemon.id).toBe(1);
-  expect(pokemon.nombre).toBe('bulbasaur');
-  expect(pokemon.foto).toBe(
+  expect(id).toBe(1);
+  expect(nombre).toBe('bulbasaur');
+  expect(foto).toBe(
     'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
   );
-  expect(pokemon.habilidades[0].ability.name).toContain('chlorophyll');
-  expect(pokemon.habilidades[1].ability.name).toBe('overgrow');
-  expect(pokemon.tipos[0].type.name).toBe('poison');
-  expect(pokemon.tipos[1].type.name).toBe('grass');
-  expect(pokemon.movimientos[0].move.name).toBe('razor-wind');
-  expect(
-    pokemon.movimientos[0].version_group_details[0].version_group.name
-  ).toBe('crystal');
+  expect(habilidades[0].ability.name).toContain('chlorophyll');
+  expect(habilidades[1].ability.name).toBe('overgrow');
+  expect(tipos[0].type.name).toBe('poison');
+  expect(tipos[1].type.name).toBe('grass');
+  expect(movimientos[0].move.name).toBe('razor-wind');
+  expect(movimientos[0].version_group_details[0].version_group.name).toBe(
+    'crystal'
+  );
 });
