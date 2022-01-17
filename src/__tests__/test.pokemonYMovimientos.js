@@ -3,6 +3,7 @@
 
 import Pokemon from '../entidades/pokemon.js';
 import bulbasaur from '../../cypress/fixtures/bulbasaur.json';
+import Movimiento from '../entidades/movimiento.js';
 
 const pokemon = new Pokemon(
   bulbasaur.id,
@@ -12,7 +13,13 @@ const pokemon = new Pokemon(
   bulbasaur.types,
   bulbasaur.moves
 );
+
 const { id, nombre, foto, habilidades, tipos, movimientos } = pokemon;
+
+const movimientosDePokemon = new Movimiento(
+  movimientos[0].move.name,
+  movimientos[0].version_group_details[0].version_group.name
+);
 
 test('testea que se muestre correctamente la informacion del pokemon seleccionado', () => {
   expect(id).toBe(1);
@@ -28,4 +35,9 @@ test('testea que se muestre correctamente la informacion del pokemon seleccionad
   expect(movimientos[0].version_group_details[0].version_group.name).toBe(
     'crystal'
   );
+});
+
+test('comprueba que movimientos reciba la información correctamente', () => {
+  expect(movimientosDePokemon.nombre).toBe('razor-wind');
+  expect(movimientosDePokemon.versiones).toBe('crystal');
 });

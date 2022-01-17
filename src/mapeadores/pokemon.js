@@ -22,10 +22,13 @@ export function mapearPokemon(datosApi) {
     fotoPrincipal,
     habilidades.map((item) => item.ability.name),
     tipos.map((item) => item.type.name),
-    movimientos.map((item) => new Movimiento(
-      item.move.name,
-      item.version_group_details.map((v) => v.version_group.name),
-    )),
+    movimientos.map(
+      (item) =>
+        new Movimiento(
+          item.move.name,
+          item.version_group_details.map((v) => v.version_group.name)
+        )
+    )
   );
 }
 
@@ -45,6 +48,6 @@ export function mapearListadoPokemones(datosApi) {
     total,
     siguienteUrl,
     anteriorUrl,
-    resultados.map((pokemon) => pokemon.name),
+    resultados.map((pokemon) => pokemon.name)
   );
 }
