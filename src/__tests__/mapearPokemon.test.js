@@ -9,4 +9,7 @@ test('prueba el mapeador', () => {
   expect(mapearPokemon(bulbasaur).habilidades).toEqual(
     expect.arrayContaining(['chlorophyll', 'overgrow'])
   );
+  expect(mapearPokemon(bulbasaur).tipos).toEqual(
+    expect.arrayContaining(['grass', 'poison'])
+  );
 });
