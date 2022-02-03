@@ -4,7 +4,7 @@ import bulbasaur from '../../cypress/fixtures/bulbasaur.json';
 const errorIdNoEncontrado = `Pokemon con id ${null} no encontrado`;
 const errorIdUndefined = 'Se necesita un identificador para cargar un pokemón';
 
-test('Prueba llama a cargarPokemon correctamente', () => {
+test('Prueba llama a cargarPokemon bulbasaur', () => {
   class LocalStorageMock {
     constructor() {
       this.store = {};
@@ -29,7 +29,7 @@ test('Prueba llama a cargarPokemon correctamente', () => {
 
   global.localStorage = new LocalStorageMock();
   localStorage.setItem('pokemon_bulbasaur', JSON.stringify(bulbasaur));
-  expect(cargarPokemon('bulbasaur')).toStrictEqual(bulbasaur);
+  expect(cargarPokemon('bulbasaur')).toMatchObject(bulbasaur);
 });
 
 test('prueba cargarPokemon con id erroneo', () => {

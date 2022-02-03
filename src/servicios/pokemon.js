@@ -14,7 +14,10 @@ import {
   guardarPokemon,
   guardarPokemones,
 } from '../storage/pokemon.js';
-import { mapearListadoPokemones, mapearPokemon } from '../mapeadores/pokemon.js';
+import {
+  mapearListadoPokemones,
+  mapearPokemon,
+} from '../mapeadores/pokemon.js';
 
 export const LIMITE_POKEMONES = 20;
 

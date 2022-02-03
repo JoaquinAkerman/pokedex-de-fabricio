@@ -23,7 +23,6 @@ export function cargarPokemon(id) {
   }
 
   const pokemon = JSON.parse(localStorage.getItem(obtenerKeyPokemon(id)));
-  console.log(pokemon);
   if (pokemon === null) {
     throw new Error(`Pokemon con id ${id} no encontrado`);
   }
