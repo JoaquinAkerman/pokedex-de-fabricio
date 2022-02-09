@@ -1,5 +1,5 @@
-import { mapearPokemon } from '../mapeadores/pokemon.js';
-import bulbasaur from '../../cypress/fixtures/bulbasaur.json';
+import { mapearPokemon } from '../pokemon';
+import bulbasaur from '../../../cypress/fixtures/bulbasaur.json';
 
 test('prueba el mapeador', () => {
   expect(mapearPokemon(bulbasaur)).toMatchObject({
