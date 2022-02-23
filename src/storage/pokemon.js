@@ -43,7 +43,6 @@ export function cargarPokemones(offset = 0, limite = LIMITE_POKEMONES) {
       `Listado de pokemones con offset ${offset} y limite ${limite} no encontrado`
     );
   }
-
   return pokemones;
 }
 

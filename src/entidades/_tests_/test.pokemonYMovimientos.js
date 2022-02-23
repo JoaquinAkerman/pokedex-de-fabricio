@@ -1,9 +1,9 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-new-object */
 
-import Pokemon from '../entidades/pokemon.js';
-import bulbasaur from '../../cypress/fixtures/bulbasaur.json';
-import Movimiento from '../entidades/movimiento.js';
+import Pokemon from '../pokemon.js';
+import bulbasaur from '../../../cypress/fixtures/bulbasaur.json';
+import Movimiento from '../movimiento.js';
 
 const pokemon = new Pokemon(
   bulbasaur.id,

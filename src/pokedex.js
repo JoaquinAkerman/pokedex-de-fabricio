@@ -1,11 +1,15 @@
 import { cargarPokemon, cargarPokemones } from './servicios/pokemon.js';
 import { actualizarTextoAyuda, mostrarTotalPokemones } from './ui/general.js';
-import { actualizarTextoIndicePokemones, mostrarListadoPokemones } from './ui/listado.js';
+import {
+  actualizarTextoIndicePokemones,
+  mostrarListadoPokemones,
+} from './ui/listado.js';
 import mostrarPaginador from './ui/paginador.js';
 import mostrarPokemon from './ui/pokemon.js';
 import obtenerParametrosDeURL from './utilidades/utilidades.js';
 
 async function cambiarPagina(pagina) {
+  console.log(pagina);
   const POKEMONES_POR_PAGINA = 20;
   let paginaActual;
   let offset;
@@ -36,11 +40,10 @@ async function cambiarPagina(pagina) {
     paginaActual,
     listadoPokemones.siguienteUrl,
     listadoPokemones.anteriorUrl,
-    cambiarPagina,
+    cambiarPagina
   );
 }
 
 export default function inicializar() {
-  return cambiarPagina(1)
-    .catch((e) => console.error(e));
+  return cambiarPagina(1).catch((e) => console.error(e));
 }

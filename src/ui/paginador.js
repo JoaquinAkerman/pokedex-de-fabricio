@@ -15,7 +15,9 @@ function crearItemPaginador(texto, url = '#') {
 export function manejarCambioPagina(e, callbackPaginaSeleccionada = () => {}) {
   e.preventDefault();
   const { target } = e;
+  console.log(target);
   const href = target.getAttribute('href');
+  console.log(href);
   let numeroPagina;
   const { pagina } = target.dataset;
   if (href === '#') {
@@ -31,7 +33,7 @@ export default function mostrarPaginador(
   paginaActual,
   urlSiguiente,
   urlAnterior,
-  callbackPaginaSeleccionada = () => {},
+  callbackPaginaSeleccionada = () => {}
 ) {
   const POKEMONES_POR_PAGINA = 20;
   const $paginador = document.querySelector('#paginador');

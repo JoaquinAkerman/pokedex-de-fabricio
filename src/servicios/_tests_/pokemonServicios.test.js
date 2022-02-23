@@ -1,12 +1,12 @@
-import { cargarPokemon } from '../servicios/pokemon.js';
+import { cargarPokemon } from '../../servicios/pokemon';
 
 test('cargarPokemon con undefined da error', () => {
   expect(cargarPokemon(undefined)).rejects.toEqual(
     new Error('Se necesita un identificador para cargar un pokemón')
   );
 });
-jest.mock('../api/pokemon.js', () => {
-  const originalModule = jest.requireActual('../api/pokemon.js');
+jest.mock('../../api/pokemon.js', () => {
+  const originalModule = jest.requireActual('../../api/pokemon.js');
   return {
     __esModule: true,
     ...originalModule,
@@ -19,8 +19,8 @@ jest.mock('../api/pokemon.js', () => {
   };
 });
 
-jest.mock('../mapeadores/pokemon.js', () => {
-  const originalModule = jest.requireActual('../mapeadores/pokemon.js');
+jest.mock('../../mapeadores/pokemon.js', () => {
+  const originalModule = jest.requireActual('../../mapeadores/pokemon.js');
   return {
     __esModule: true,
     ...originalModule,
@@ -28,8 +28,8 @@ jest.mock('../mapeadores/pokemon.js', () => {
   };
 });
 
-jest.mock('../storage/pokemon.js', () => {
-  const originalModule = jest.requireActual('../storage/pokemon.js');
+jest.mock('../../storage/pokemon.js', () => {
+  const originalModule = jest.requireActual('../../storage/pokemon.js');
   return {
     __esModule: true,
     ...originalModule,

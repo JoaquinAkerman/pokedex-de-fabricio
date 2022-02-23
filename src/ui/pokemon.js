@@ -57,14 +57,7 @@ function mostrarHabilidades(habilidades) {
  * @param {Pokemon} pokemon
  */
 export default function mostrarPokemon(pokemon) {
-  const {
-    id,
-    nombre,
-    foto,
-    tipos,
-    habilidades,
-    movimientos,
-  } = pokemon;
+  const { id, nombre, foto, tipos, habilidades, movimientos } = pokemon;
 
   document.querySelector('#pokemon-contenedor').style.display = 'block';
   actualizarTextoAyuda('');

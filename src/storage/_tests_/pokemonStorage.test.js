@@ -1,8 +1,5 @@
-import { cargarPokemon } from '../storage/pokemon.js';
-import bulbasaur from '../../cypress/fixtures/bulbasaur.json';
-
-const errorIdNoEncontrado = `Pokemon con id ${null} no encontrado`;
-const errorIdUndefined = 'Se necesita un identificador para cargar un pokemón';
+import { cargarPokemon, guardarPokemon, guardarPokemones } from '../pokemon.js';
+import bulbasaur from '../../../cypress/fixtures/bulbasaur.json';
 
 test('Prueba llama a cargarPokemon bulbasaur', () => {
   class LocalStorageMock {
@@ -35,9 +32,22 @@ test('Prueba llama a cargarPokemon bulbasaur', () => {
 test('prueba cargarPokemon con id erroneo', () => {
   expect(() => {
     cargarPokemon(null);
-  }).toThrow(errorIdNoEncontrado);
+  }).toThrow(`Pokemon con id ${null} no encontrado`);
 });
 test('prueba llamar a cargarPokemon sin id', () =>
   expect(() => {
     cargarPokemon(undefined);
-  }).toThrow(errorIdUndefined));
+  }).toThrow('Se necesita un identificador para cargar un pokemón'));
+
+test('prueba guardar pokemon con parámetros incorrectos', () => {
+  expect(() => {
+    guardarPokemon(undefined, '');
+  }).toThrow(
+    'Se necesita un identificador y un pokemon para guardar en localStorage'
+  );
+});
+test('prueba guardar pokemon con parámetros incorrectos', () => {
+  expect(() => {
+    guardarPokemones(undefined, '');
+  }).toThrow('Se necesita offset, limite y pokemones');
+});
