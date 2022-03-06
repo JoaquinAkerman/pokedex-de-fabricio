@@ -2,9 +2,6 @@ import inicializar from '../pokedex.js';
 import fixture from './pokedex.fixture.js';
 import listadoFixture from '../../cypress/fixtures/listado-pagina-1.json';
 
-import cambiarPagina from '../pokedex';
-import obtenerParametrosDeURL from '../utilidades/utilidades.js';
-
 test('inicializa pokedex', () => {
   document.body.innerHTML = fixture;
   global.fetch = jest.fn().mockImplementation(
@@ -30,12 +27,4 @@ test('inicializa pokedex', () => {
       20
     );
   });
-});
-
-test('prueba cambiar pagina', () => {
-  document.body.innerHTML = fixture;
-  cambiarPagina(2);
-  const paginador = document.querySelector('#paginador');
-  console.log(paginador);
-  expect(paginador.textContent).toContain('data-pagina=2');
 });

@@ -9,7 +9,6 @@ import mostrarPokemon from './ui/pokemon.js';
 import obtenerParametrosDeURL from './utilidades/utilidades.js';
 
 async function cambiarPagina(pagina) {
-  console.log(pagina);
   const POKEMONES_POR_PAGINA = 20;
   let paginaActual;
   let offset;
@@ -28,7 +27,6 @@ async function cambiarPagina(pagina) {
   actualizarTextoIndicePokemones('Cargando...');
 
   const listadoPokemones = await cargarPokemones(offset, limit);
-
   mostrarTotalPokemones(listadoPokemones.total);
   mostrarListadoPokemones(listadoPokemones.nombresPokemones, async (nombre) => {
     actualizarTextoAyuda('Cargando...');
